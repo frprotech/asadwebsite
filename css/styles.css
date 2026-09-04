@@ -1594,7 +1594,7 @@ img, video, svg {
 .footer-bottom-modern {
   position: relative;
   z-index: 1;
-  background: #01060b;
+  background: transparent;
   padding: 24px 0;
 }
 
