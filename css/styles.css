@@ -151,6 +151,7 @@ img, video, svg {
   background: linear-gradient(135deg, #ffffff 30%, var(--color-teal-light) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-bottom: 0.18em;
 }
 
 /* Section Tag Badges - Uniform Brand Teal System */
@@ -556,7 +557,7 @@ img, video, svg {
 .hero-title {
   font-size: clamp(2.75rem, 5.2vw, 4.6rem);
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.18;
   letter-spacing: -0.035em;
   margin-bottom: 24px;
   text-wrap: balance;
@@ -564,6 +565,15 @@ img, video, svg {
 
 .hero-title-line {
   display: block;
+  padding-top: 0.04em;
+  padding-bottom: 0.16em;
+}
+
+.hero-title-line.text-gradient {
+  display: block;
+  padding-top: 0.04em;
+  padding-bottom: 0.22em;
+  margin-bottom: -0.1em;
 }
 
 .hero-subtitle {
@@ -1807,7 +1817,7 @@ img, video, svg {
 
   .hero-title {
     font-size: clamp(1.95rem, 5vw, 2.6rem);
-    line-height: 1.12;
+    line-height: 1.2;
     letter-spacing: -0.03em;
     margin-bottom: 20px;
   }
@@ -1996,7 +2006,7 @@ img, video, svg {
 
   .hero-title {
     font-size: clamp(1.48rem, 6.1vw, 1.82rem);
-    line-height: 1.15;
+    line-height: 1.22;
     letter-spacing: -0.025em;
     margin-bottom: 18px;
   }
@@ -2061,7 +2071,7 @@ img, video, svg {
 @media (max-width: 360px) {
   .hero-title {
     font-size: 1.4rem;
-    line-height: 1.18;
+    line-height: 1.24;
   }
 
   .services-hub-footer .btn {
