@@ -523,6 +523,7 @@ img, video, svg {
   border-radius: var(--radius-full);
   margin-bottom: 28px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
 }
 
 .live-pulse {
@@ -532,6 +533,7 @@ img, video, svg {
   background: #4ade80;
   box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
   animation: liveGlow 1.8s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes liveGlow {
@@ -546,6 +548,7 @@ img, video, svg {
   font-weight: 700;
   color: var(--color-teal-light);
   letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .hero-title {
@@ -1719,6 +1722,19 @@ img, video, svg {
     padding-bottom: 60px;
   }
 
+  .pill-badge-hero {
+    padding: 6px 14px;
+    gap: 8px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .badge-text {
+    font-size: clamp(0.58rem, 2.3vw, 0.75rem);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
   .hero-ctas {
     flex-direction: column;
     width: 100%;
@@ -1786,6 +1802,25 @@ img, video, svg {
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
+
+  .pill-badge-hero {
+    padding: 5px 10px;
+    gap: 6px;
+    margin-bottom: 16px;
+    max-width: 100%;
+  }
+
+  .live-pulse {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+  }
+
+  .badge-text {
+    font-size: clamp(0.48rem, 2.45vw, 0.62rem);
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
 
   .trust-bar {
     padding: 16px;
