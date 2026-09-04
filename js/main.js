@@ -35,117 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. PROJECT CASE STUDIES DATA & MODAL DIALOG
-  const projectsData = {
-    '10-rules': {
-      title: '10 Rules for Dealing with the Police',
-      tag: 'Constitutional Rights Simulation',
-      img: 'assets/projects/10-rules.jpg',
-      desc: 'Created with Flex Your Rights and used across the political spectrum from the ACLU to the CATO Institute to teach citizens how to exercise constitutional rights safely during police encounters.',
-      impact: 'Distributed nationally, screening in hundreds of schools, universities, and advocacy workshops.'
-    },
-    'the-burden': {
-      title: 'The Burden: Fossil Fuels & National Security',
-      tag: 'Defense & Clean Energy',
-      img: 'assets/projects/the-burden.jpg',
-      desc: 'Reframing climate change and clean energy through the lens of US military readiness and national security to move conservative legislators, veterans, and defense leaders.',
-      impact: 'Catalyzed bipartisan Congressional briefings and shaped military microgrid deployment strategy.'
-    },
-    'tidewater': {
-      title: 'Tidewater: Sea Level Rise & Military Readiness',
-      tag: 'Military Infrastructure',
-      img: 'assets/projects/Tidewater-Poster-25.jpg',
-      desc: 'Addressing sea level rise as a direct threat to US military installations and regional economies in Hampton Roads, Virginia.',
-      impact: 'Bypassed political paralysis and led to multi-agency coastal resilience task forces.'
-    },
-    'fordham': {
-      title: 'Fordham University Gabelli School of Business',
-      tag: 'Executive Education',
-      img: 'assets/projects/roger-sorkin-case-study.jpg',
-      desc: 'Immersive simulations for MBA cohorts preparing future business leaders to navigate sensitive, highly contested corporate communication challenges.',
-      impact: 'Integrated into core executive MBA curriculum.'
-    },
-    'clean-economy': {
-      title: 'Clean Economy Now',
-      tag: 'Public Policy',
-      img: 'assets/projects/clean-economy-now-cover.jpg',
-      desc: 'Designed to influence public policy by articulating the economic rationale behind clean energy infrastructure and job growth.',
-      impact: 'Mobilized business leaders across 12 states for legislative advocacy.'
-    },
-    'farm-free': {
-      title: 'Farm Free or Die',
-      tag: 'Regenerative Agriculture',
-      img: 'assets/projects/Farm-Free-Poster-18.jpg',
-      desc: 'Centering voices of American farmers to demonstrate how regenerative agriculture rebuilds rural economies and safeguards food security.',
-      impact: 'Screened at Congressional Farm Bill hearings to advocate for soil health incentives.'
-    },
-    'current-rev': {
-      title: 'Current Revolution: Film Series',
-      tag: 'Energy Transition',
-      img: 'assets/projects/current-revolution.jpg',
-      desc: 'Multi-film documentary series examining grid modernization and showing how combustion engine workers can transition into renewable energy careers.',
-      impact: 'Partnered with utility providers and labor unions for workforce retraining advocacy.'
-    },
-    'nation-in-transition': {
-      title: 'Nation in Transition',
-      tag: 'Tribal Sovereignty',
-      img: 'assets/projects/Current-Rev-NIT-Poster-15.jpg',
-      desc: 'Documenting coal-to-renewable transition in the Navajo Nation, offering a human-centered roadmap for energy transitions globally.',
-      impact: 'Helped secure federal renewable energy grants for tribal communities.'
-    },
-    'renewable-rural': {
-      title: 'Renewable Energy Works for Rural America',
-      tag: 'Rural Advocacy',
-      img: 'assets/projects/renewable-energy-poster.jpg',
-      desc: 'Social media video campaign produced for environmental non-profits to defend rural clean energy economic gains.',
-      impact: 'Generated over 2 million organic video views across agricultural communities.'
-    },
-    'resilient-ground': {
-      title: 'Resilient on the Ground',
-      tag: 'Workforce Alignment',
-      img: 'assets/projects/resilient-on-the-ground-poster-1.jpg',
-      desc: 'Documentary film created for a major US airport telling their sustainability success story and aligning a 10,000-employee workforce.',
-      impact: 'Achieved 94% workforce alignment in post-viewing surveys.'
-    }
-  };
-
-  const projectModal = document.getElementById('projectModal');
-  const modalBody = document.getElementById('modalBody');
-  const modalClose = document.getElementById('modalClose');
-
-  function openCaseStudyModal(projectKey) {
-    const data = projectsData[projectKey];
-    if (data && projectModal && modalBody) {
-      modalBody.innerHTML = `
-        <img src="${data.img}" alt="${data.title}" />
-        <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--color-teal-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${data.tag}</span>
-        <h3 style="font-size:1.8rem; font-weight:800; color:#fff; margin-bottom:14px;">${data.title}</h3>
-        <p style="font-size:1rem; color:var(--color-text-muted-light); line-height:1.6; margin-bottom:20px;">${data.desc}</p>
-        <div style="background:rgba(255,255,255,0.06); padding:16px 20px; border-radius:12px; border-left:4px solid var(--color-teal); margin-bottom:24px;">
-          <strong style="color:#fff; display:block; margin-bottom:4px;">Documented Impact:</strong>
-          <span style="color:var(--color-text-muted-light); font-size:0.9rem;">${data.impact}</span>
-        </div>
-        <div class="modal-footer-cta">
-          <a href="#contact" class="btn btn-primary" onclick="document.getElementById('projectModal').close();">Discuss Similar Strategy &rarr;</a>
-        </div>
-      `;
-      projectModal.showModal();
-    }
-  }
-
-  document.querySelectorAll('.project-slide-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const projectKey = card.dataset.project;
-      if (projectKey) openCaseStudyModal(projectKey);
+  // 3. PROJECT CASE STUDIES LINK HANDLER
+  // Prevents jumping to top when clicking placeholder '#' links until dedicated pages are connected
+  document.querySelectorAll('.case-study-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if (btn.getAttribute('href') === '#') {
+        e.preventDefault();
+      }
     });
   });
-
-  if (modalClose && projectModal) {
-    modalClose.addEventListener('click', () => projectModal.close());
-    projectModal.addEventListener('click', (e) => {
-      if (e.target === projectModal) projectModal.close();
-    });
-  }
 
   // 4. CONNECTED NODE NETWORK SYSTEM
 
