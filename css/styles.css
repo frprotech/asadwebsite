@@ -2086,17 +2086,7 @@ img, video, svg {
    16. PERFORMANCE & CORE WEB VITALS OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 
-/* Defer offscreen rendering to accelerate FCP, LCP and Total Blocking Time */
-.section-projects {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 700px;
-}
-
-.section-about {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 750px;
-}
-
+/* Defer deep offscreen sections to accelerate FCP, LCP and Total Blocking Time */
 .section-testimonials {
   content-visibility: auto;
   contain-intrinsic-size: auto 550px;
