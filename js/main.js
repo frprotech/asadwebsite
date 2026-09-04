@@ -19,24 +19,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // 2. MOBILE MENU TOGGLE
+  // 2. MOBILE MENU TOGGLE & BACKDROP
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
+  const navBackdrop = document.getElementById('navBackdrop');
+
+  function closeMobileMenu() {
+    if (navMenu) navMenu.classList.remove('open');
+    if (navToggle) {
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (navBackdrop) navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function openMobileMenu() {
+    if (navMenu) navMenu.classList.add('open');
+    if (navToggle) {
+      navToggle.classList.add('open');
+      navToggle.setAttribute('aria-expanded', 'true');
+    }
+    if (navBackdrop) navBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
   if (navToggle && navMenu) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      navToggle.classList.toggle('open', isOpen);
-      navToggle.setAttribute('aria-expanded', isOpen);
+    navToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.contains('open');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
     });
 
-    // Close mobile menu when clicking nav links
-    document.querySelectorAll('.nav-link').forEach(link => {
+    if (navBackdrop) {
+      navBackdrop.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close mobile menu when clicking nav links or CTA
+    navMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navToggle.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
       });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -179,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. PROJECTS SLIDER NAVIGATION
+  // 6. PROJECTS SLIDER NAVIGATION
   const sliderWrapper = document.getElementById('projectSliderWrapper');
   const prevBtn = document.getElementById('prevProjectBtn');
   const nextBtn = document.getElementById('nextProjectBtn');
@@ -193,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 6. TESTIMONIALS SLIDER NAVIGATION
+  // 7. TESTIMONIALS SLIDER NAVIGATION
   const testSliderWrap = document.getElementById('testimonialSliderWrap');
   const prevTestBtn = document.getElementById('prevTestimonialBtn');
   const nextTestBtn = document.getElementById('nextTestimonialBtn');
@@ -207,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 7. CONTACT FORM SUBMISSION HANDLER
+  // 8. CONTACT FORM SUBMISSION HANDLER
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
   const submitBtn = document.getElementById('submitBtn');
@@ -225,6 +259,26 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send Message <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
       }, 1200);
+    });
+  }
+
+  // 9. NEWSLETTER SUBSCRIPTION HANDLER
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('.newsletter-modern-input');
+      const submit = newsletterForm.querySelector('button[type="submit"]');
+      if (submit) {
+        const originalText = submit.innerText;
+        submit.disabled = true;
+        submit.innerText = 'Subscribed!';
+        if (input) input.value = '';
+        setTimeout(() => {
+          submit.disabled = false;
+          submit.innerText = originalText;
+        }, 3000);
+      }
     });
   }
 });

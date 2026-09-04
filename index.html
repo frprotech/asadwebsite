@@ -45,9 +45,14 @@
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
+        <span class="nav-toggle-box">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </span>
       </button>
+
+      <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
@@ -363,20 +368,8 @@
       </div>
     </section>
 
-    <!-- Projects Portfolio Showcase (Strict Grid Aligned Container Slider) -->
+    <!-- Selected Case Studies & Projects Portfolio -->
     <section class="section section-dark section-projects" id="projects">
-      <!-- Inline Vector Pattern Layer for Figma Import/Export -->
-      <div class="figma-bg-pattern-layer" aria-hidden="true">
-        <svg class="figma-pattern-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="framerGridPatternProjects" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255, 255, 255, 0.065)" stroke-width="1"/>
-              <path d="M 75 80 L 85 80 M 80 75 L 80 85" fill="none" stroke="rgba(122, 180, 180, 0.45)" stroke-width="1.2"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#framerGridPatternProjects)"/>
-        </svg>
-      </div>
 
       <div class="container">
         <div class="slider-header-row">
@@ -738,18 +731,6 @@
 
     <!-- Contact Form & Call to Action Section -->
     <section class="section section-dark section-contact" id="contact">
-      <!-- Inline Vector Pattern Layer -->
-      <div class="figma-bg-pattern-layer" aria-hidden="true">
-        <svg class="figma-pattern-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="framerGridPatternContact" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255, 255, 255, 0.065)" stroke-width="1"/>
-              <path d="M 75 80 L 85 80 M 80 75 L 80 85" fill="none" stroke="rgba(122, 180, 180, 0.45)" stroke-width="1.2"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#framerGridPatternContact)"/>
-        </svg>
-      </div>
 
       <div class="container">
         <div class="contact-grid">
@@ -837,9 +818,7 @@
     </div>
   </dialog>
 
-
-
-  <!-- HIGH-END AGENCY FOOTER ALIGNED STRICTLY WITH OFFICIAL SITE LINKS -->
+  <!-- Modern Agency Footer -->
   <footer class="footer-modern">
     <div class="footer-ambient-bg">
       <img src="assets/logo icon.svg" alt="" class="footer-watermark-logo" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async" />

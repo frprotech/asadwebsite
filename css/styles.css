@@ -1,6 +1,6 @@
 /* ==========================================================================
-   ROGER SORKIN - $50,000 USD AGENCY-GRADE MODERN STYLESHEET
-   FIGMA PLUGIN EXPORT COMPATIBLE & FULL MOBILE RESPONSIVE AUDIT
+   ROGER SORKIN - STRATEGIC COMMUNICATIONS WEBSITE
+   Main Stylesheet
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -58,7 +58,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   2. GLOBAL BASE STYLES & PREVENT HORIZONTAL SCROLL
+   2. GLOBAL BASE STYLES & TYPOGRAPHY
    -------------------------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -155,9 +155,7 @@ img, video, svg {
 }
 
 /* Section Tag Badges - Uniform Brand Teal System */
-.section-tag,
-.eyebrow-tag,
-.lamalama-tag {
+.section-tag {
   display: inline-block;
   font-family: var(--font-heading);
   font-size: 0.8125rem;
@@ -204,26 +202,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   3. FIGMA PLUGIN COMPATIBLE PATTERN LAYERS
-   -------------------------------------------------------------------------- */
-.figma-bg-pattern-layer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.figma-pattern-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* --------------------------------------------------------------------------
-   4. UNIFIED BUTTON SYSTEM
+   3. UNIFIED BUTTON SYSTEM
    -------------------------------------------------------------------------- */
 .btn {
   display: inline-flex;
@@ -341,7 +320,7 @@ img, video, svg {
 .btn-block { width: 100%; }
 
 /* --------------------------------------------------------------------------
-   5. FLOATING NAVBAR & BRAND LOGO
+   4. FLOATING NAVBAR & BRAND LOGO
    -------------------------------------------------------------------------- */
 .navbar {
   position: fixed;
@@ -426,34 +405,72 @@ img, video, svg {
 }
 .nav-link:hover { color: #ffffff; }
 
+/* Mobile Menu Specific Desktop Defaults */
+.nav-backdrop {
+  display: none;
+}
+
+/* 3-Line Modern Accessible Hamburger Toggle */
 .nav-toggle {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  width: 28px;
-  height: 20px;
+  width: 44px;
+  height: 44px;
+  padding: 12px 9px;
   position: relative;
-  z-index: 1001;
+  z-index: 1002;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
 }
 
-.nav-toggle span {
+.nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-toggle-box {
+  width: 26px;
+  height: 18px;
+  position: relative;
+  display: block;
+}
+
+.nav-toggle-bar {
   display: block;
   width: 100%;
   height: 2px;
   background-color: #ffffff;
   border-radius: 2px;
-  transition: all var(--transition-normal);
   position: absolute;
+  left: 0;
+  transition: transform var(--transition-normal), opacity var(--transition-fast), top var(--transition-normal), background-color var(--transition-fast);
 }
-.nav-toggle span:nth-child(1) { top: 0; }
-.nav-toggle span:nth-child(2) { top: 10px; }
 
-.nav-toggle.open span:nth-child(1) { transform: translateY(5px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { transform: translateY(-5px) rotate(-45deg); }
+.nav-toggle-bar:nth-child(1) { top: 0; }
+.nav-toggle-bar:nth-child(2) { top: 8px; }
+.nav-toggle-bar:nth-child(3) { top: 16px; }
+
+/* 3-Line Hamburger to 'X' Transition */
+.nav-toggle.open .nav-toggle-bar:nth-child(1) {
+  top: 8px;
+  transform: rotate(45deg);
+  background-color: var(--color-teal-light);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle.open .nav-toggle-bar:nth-child(3) {
+  top: 8px;
+  transform: rotate(-45deg);
+  background-color: var(--color-teal-light);
+}
 
 /* --------------------------------------------------------------------------
-   6. HERO SECTION
+   5. HERO SECTION
    -------------------------------------------------------------------------- */
 .hero-section {
   position: relative;
@@ -643,7 +660,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   7. CLIENT LOGOS TICKER (PREVENT HORIZONTAL OVERFLOW)
+   6. CLIENT LOGOS TICKER
    -------------------------------------------------------------------------- */
 .client-logos-section {
   padding: 44px 0;
@@ -689,7 +706,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   8. SERVICES SECTION (CONNECTED NODE NETWORK ARCHITECTURE)
+   7. SERVICES SECTION (CONNECTED NODE NETWORK ARCHITECTURE)
    -------------------------------------------------------------------------- */
 .section-services-hub {
   background-color: #f7f8fa;
@@ -1021,7 +1038,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   9. CASE STUDIES / PROJECTS SHOWCASE
+   8. CASE STUDIES / PROJECTS SHOWCASE
    -------------------------------------------------------------------------- */
 .section-projects {
   background-color: var(--color-navy-dark);
@@ -1191,7 +1208,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   10. ABOUT SECTION
+   9. ABOUT SECTION
    -------------------------------------------------------------------------- */
 .about-editorial-grid {
   display: grid;
@@ -1320,7 +1337,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   11. TESTIMONIALS SLIDER
+   10. TESTIMONIALS SLIDER
    -------------------------------------------------------------------------- */
 .section-testimonials {
   border-top: 1px solid var(--color-border-light);
@@ -1415,7 +1432,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   12. CONTACT SECTION
+   11. CONTACT SECTION
    -------------------------------------------------------------------------- */
 .section-contact {
   background-color: var(--color-navy-dark);
@@ -1525,7 +1542,7 @@ img, video, svg {
 .form-feedback.success { color: #4ade80; }
 
 /* --------------------------------------------------------------------------
-   13. FOOTER
+   12. FOOTER SYSTEM
    -------------------------------------------------------------------------- */
 .footer-modern {
   background-color: #020912;
@@ -1646,7 +1663,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   14. MODAL DIALOGS
+   13. MODAL DIALOGS
    -------------------------------------------------------------------------- */
 .modal-dialog {
   padding: 0;
@@ -1719,7 +1736,7 @@ img, video, svg {
 
 
 /* --------------------------------------------------------------------------
-   15. COMPREHENSIVE RESPONSIVE MEDIA QUERIES (ZERO HORIZONTAL SCROLL)
+   14. COMPREHENSIVE RESPONSIVE MEDIA QUERIES (ZERO HORIZONTAL SCROLL)
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
@@ -1760,6 +1777,7 @@ img, video, svg {
     box-sizing: border-box;
   }
   
+  /* 3-Line Hamburger Button on Mobile */
   .nav-toggle {
     display: flex;
     align-items: center;
@@ -1772,38 +1790,97 @@ img, video, svg {
   .nav-toggle:focus-visible {
     outline: 2px solid var(--color-teal);
   }
-  
+
+  /* Frosted Backdrop Dimmer */
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 9, 18, 0.72);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    z-index: 1000;
+  }
+  .nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Luxury Slide-in Drawer */
   .nav-menu {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 85%;
+    width: 86%;
     max-width: 320px;
     height: 100vh;
-    background: var(--color-navy-dark);
+    height: 100dvh;
+    background: linear-gradient(180deg, #071f35 0%, #031221 100%);
+    border-left: 1px solid rgba(85, 134, 134, 0.28);
     flex-direction: column;
-    align-items: flex-start;
-    padding: 90px 28px 40px;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 72px 24px 32px;
     transition: right var(--transition-normal);
-    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: -14px 0 40px rgba(0, 0, 0, 0.65);
+    z-index: 1001;
+    overflow-y: auto;
   }
-  .nav-menu.open { right: 0; }
-  
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 28px;
-    width: 100%;
+  .nav-menu.open {
+    right: 0;
   }
 
+  /* Clean Options with Thin Separator Lines */
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-list li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-link {
+    display: block;
+    padding: 16px 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    transition: all var(--transition-fast);
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-link:hover,
+  .nav-link:active {
+    color: #ffffff;
+    background: rgba(85, 134, 134, 0.12);
+    padding-left: 14px;
+  }
+
+  /* CTA Button Placed Directly After Menu Links */
   .nav-menu .nav-actions {
     width: 100%;
+    margin-top: 24px;
+    padding-top: 0;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
   .nav-menu .nav-actions .btn {
     width: 100%;
     justify-content: center;
-    padding: 12px 20px;
+    padding: 13px 20px;
+    font-size: 0.95rem;
   }
 
   .hero-section {
@@ -1900,28 +1977,6 @@ img, video, svg {
     padding: 13px 20px;
   }
 
-  .step-card-header {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .step-card-number-title {
-    gap: 16px;
-  }
-
-  .step-card-details {
-    padding-left: 0;
-    margin-top: 20px;
-  }
-
-  .sticky-step-card {
-    padding: 24px 20px 32px 20px;
-  }
-
-  .sticky-step-card.step-1 { top: 75px; }
-  .sticky-step-card.step-2 { top: 135px; }
-  .sticky-step-card.step-3 { top: 195px; }
-  .sticky-step-card.step-4 { top: 255px; }
 
   .poster-mat-frame {
     height: 340px;
@@ -2083,7 +2138,7 @@ img, video, svg {
 }
 
 /* --------------------------------------------------------------------------
-   16. PERFORMANCE & CORE WEB VITALS OPTIMIZATIONS
+   15. PERFORMANCE & CORE WEB VITALS OPTIMIZATIONS
    -------------------------------------------------------------------------- */
 
 /* Defer deep offscreen sections to accelerate FCP, LCP and Total Blocking Time */
