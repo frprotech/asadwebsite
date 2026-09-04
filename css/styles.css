@@ -1823,39 +1823,40 @@ img, video, svg {
     padding: 0 4px;
   }
 
-  /* Hero Stats Grid with Thin Separator Lines on Mobile/Tablet */
+  /* Hero Stats: 1 Stat Per Row on Mobile with Thin Separator Line Between */
   .trust-bar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 20px;
     gap: 0;
     border-radius: var(--radius-md);
   }
 
-  .trust-divider {
-    display: none;
-  }
-
   .trust-item {
     width: 100%;
-    padding: 14px 10px;
+    padding: 16px 8px;
     margin-bottom: 0;
     box-sizing: border-box;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  /* Thin vertical & horizontal divider lines */
-  .trust-item:nth-of-type(1) {
-    border-right: 1px solid var(--color-border-dark);
-    border-bottom: 1px solid var(--color-border-dark);
+  .trust-item:first-of-type {
+    padding-top: 4px;
   }
 
-  .trust-item:nth-of-type(2) {
-    border-bottom: 1px solid var(--color-border-dark);
+  .trust-item:last-of-type {
+    padding-bottom: 4px;
   }
 
-  .trust-item:nth-of-type(3) {
-    border-right: 1px solid var(--color-border-dark);
+  .trust-divider {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border-dark);
+    margin: 0;
   }
 
   .pill-badge-hero {
@@ -2007,20 +2008,20 @@ img, video, svg {
   }
 
   .trust-bar {
-    padding: 12px 8px;
+    padding: 10px 16px;
   }
 
   .trust-item {
-    padding: 12px 8px;
+    padding: 14px 6px;
   }
 
   .trust-number {
-    font-size: clamp(1.35rem, 5vw, 1.65rem);
+    font-size: clamp(1.5rem, 5.5vw, 1.85rem);
   }
 
   .trust-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.4px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
     margin-top: 4px;
   }
 
