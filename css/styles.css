@@ -554,19 +554,29 @@ img, video, svg {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2.75rem, 5.2vw, 4.6rem);
   font-weight: 800;
   line-height: 1.08;
   letter-spacing: -0.035em;
   margin-bottom: 24px;
+  text-wrap: balance;
+}
+
+.hero-title-line {
+  display: block;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   color: #cbd5e1;
-  max-width: 780px;
+  max-width: 880px;
   margin: 0 auto 44px;
-  line-height: 1.6;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+.hero-sub-desktop-br {
+  display: inline;
 }
 
 .hero-ctas {
@@ -1707,8 +1717,7 @@ img, video, svg {
    -------------------------------------------------------------------------- */
 @media (max-width: 1024px) {
   .container { padding: 0 24px; }
-  .trust-bar { flex-wrap: wrap; gap: 20px; }
-  .trust-divider { display: none; }
+  .trust-bar { padding: 20px 24px; }
   .about-editorial-grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -1794,6 +1803,59 @@ img, video, svg {
   .hero-section {
     padding-top: 120px;
     padding-bottom: 60px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 5vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub-desktop-br {
+    display: none;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+    padding: 0 4px;
+  }
+
+  /* Hero Stats Grid with Thin Separator Lines on Mobile/Tablet */
+  .trust-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px 12px;
+    gap: 0;
+    border-radius: var(--radius-md);
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .trust-item {
+    width: 100%;
+    padding: 14px 10px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  /* Thin vertical & horizontal divider lines */
+  .trust-item:nth-of-type(1) {
+    border-right: 1px solid var(--color-border-dark);
+    border-bottom: 1px solid var(--color-border-dark);
+  }
+
+  .trust-item:nth-of-type(2) {
+    border-bottom: 1px solid var(--color-border-dark);
+  }
+
+  .trust-item:nth-of-type(3) {
+    border-right: 1px solid var(--color-border-dark);
   }
 
   .pill-badge-hero {
@@ -1931,14 +1993,35 @@ img, video, svg {
     white-space: nowrap;
   }
 
+  .hero-title {
+    font-size: clamp(1.48rem, 6.1vw, 1.82rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 28px;
+  }
+
   .trust-bar {
-    padding: 16px;
-    border-radius: var(--radius-md);
+    padding: 12px 8px;
   }
 
   .trust-item {
-    width: 50%;
-    margin-bottom: 12px;
+    padding: 12px 8px;
+  }
+
+  .trust-number {
+    font-size: clamp(1.35rem, 5vw, 1.65rem);
+  }
+
+  .trust-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.4px;
+    margin-top: 4px;
   }
 
   /* Compact Services CTA Button */
@@ -1975,6 +2058,11 @@ img, video, svg {
 }
 
 @media (max-width: 360px) {
+  .hero-title {
+    font-size: 1.4rem;
+    line-height: 1.18;
+  }
+
   .services-hub-footer .btn {
     font-size: 0.82rem;
     padding: 11px 12px;
