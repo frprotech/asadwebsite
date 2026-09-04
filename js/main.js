@@ -4,15 +4,20 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. NAVBAR SCROLL EFFECT
+  // 1. NAVBAR SCROLL EFFECT (Optimized with requestAnimationFrame & passive listener)
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
+  if (navbar) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          navbar.classList.toggle('scrolled', window.scrollY > 40);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 
   // 2. MOBILE MENU TOGGLE
   const navToggle = document.getElementById('navToggle');
@@ -45,9 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. CONNECTED NODE NETWORK SYSTEM
-
-  // DYNAMIC SVG CONNECTOR LINE GENERATOR & ANIMATION
+  // 4. CONNECTED NODE NETWORK SYSTEM (High-performance DocumentFragment & rAF rendering)
   const networkContainer = document.getElementById('servicesNetwork');
   const networkCanvas = document.getElementById('networkCanvas');
   const baseLinesGroup = document.getElementById('networkBaseLines');
@@ -59,56 +62,60 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!networkContainer || !networkCanvas || !hubCircle || !hubCards.length) return;
     if (window.innerWidth < 992) return; // Hidden on small screens
 
-    const containerRect = networkContainer.getBoundingClientRect();
-    const hubRect = hubCircle.getBoundingClientRect();
+    window.requestAnimationFrame(() => {
+      const containerRect = networkContainer.getBoundingClientRect();
+      const hubRect = hubCircle.getBoundingClientRect();
 
-    const hubCenter = {
-      x: hubRect.left + hubRect.width / 2 - containerRect.left,
-      y: hubRect.top + hubRect.height / 2 - containerRect.top,
-      radius: hubRect.width / 2
-    };
+      const hubCenter = {
+        x: hubRect.left + hubRect.width / 2 - containerRect.left,
+        y: hubRect.top + hubRect.height / 2 - containerRect.top,
+        radius: hubRect.width / 2
+      };
 
-    baseLinesGroup.innerHTML = '';
-    pulseLinesGroup.innerHTML = '';
+      const baseFragment = document.createDocumentFragment();
+      const pulseFragment = document.createDocumentFragment();
 
-    hubCards.forEach((card, i) => {
-      const isLeft = card.closest('.left-col') !== null;
-      const nodePin = card.querySelector('.card-terminal-node');
-      if (!nodePin) return;
+      hubCards.forEach((card, i) => {
+        const isLeft = card.closest('.left-col') !== null;
+        const nodePin = card.querySelector('.card-terminal-node');
+        if (!nodePin) return;
 
-      const pinRect = nodePin.getBoundingClientRect();
-      const startX = pinRect.left + pinRect.width / 2 - containerRect.left;
-      const startY = pinRect.top + pinRect.height / 2 - containerRect.top;
+        const pinRect = nodePin.getBoundingClientRect();
+        const startX = pinRect.left + pinRect.width / 2 - containerRect.left;
+        const startY = pinRect.top + pinRect.height / 2 - containerRect.top;
 
-      // Contact point on perimeter of central circle
-      const angle = Math.atan2(startY - hubCenter.y, startX - hubCenter.x);
-      const endX = hubCenter.x + Math.cos(angle) * (hubCenter.radius + 6);
-      const endY = hubCenter.y + Math.sin(angle) * (hubCenter.radius + 6);
+        // Contact point on perimeter of central circle
+        const angle = Math.atan2(startY - hubCenter.y, startX - hubCenter.x);
+        const endX = hubCenter.x + Math.cos(angle) * (hubCenter.radius + 6);
+        const endY = hubCenter.y + Math.sin(angle) * (hubCenter.radius + 6);
 
-      // Smooth S-curve control points (matches user reference image)
-      const horizontalSpan = Math.abs(endX - startX);
-      const cp1X = isLeft ? startX + horizontalSpan * 0.55 : startX - horizontalSpan * 0.55;
-      const cp1Y = startY;
-      const cp2X = isLeft ? endX - horizontalSpan * 0.35 : endX + horizontalSpan * 0.35;
-      const cp2Y = endY;
+        // Smooth S-curve control points (matches reference design)
+        const horizontalSpan = Math.abs(endX - startX);
+        const cp1X = isLeft ? startX + horizontalSpan * 0.55 : startX - horizontalSpan * 0.55;
+        const cp1Y = startY;
+        const cp2X = isLeft ? endX - horizontalSpan * 0.35 : endX + horizontalSpan * 0.35;
+        const cp2Y = endY;
 
-      const pathData = `M ${startX} ${startY} C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${endX} ${endY}`;
+        const pathData = `M ${startX} ${startY} C ${cp1X} ${cp1Y}, ${cp2X} ${cp2Y}, ${endX} ${endY}`;
 
-      // Base static line
-      const baseLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      baseLine.setAttribute('d', pathData);
-      baseLine.setAttribute('class', 'network-base-line');
-      baseLine.setAttribute('id', `base-line-${i}`);
-      baseLinesGroup.appendChild(baseLine);
+        // Base static line
+        const baseLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        baseLine.setAttribute('d', pathData);
+        baseLine.setAttribute('class', 'network-base-line');
+        baseLine.setAttribute('id', `base-line-${i}`);
+        baseFragment.appendChild(baseLine);
 
-      // Animated pulse beam
-      const pulseLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      pulseLine.setAttribute('d', pathData);
-      pulseLine.setAttribute('class', 'network-pulse-line');
-      pulseLine.setAttribute('id', `pulse-line-${i}`);
-      pulseLine.style.animationDelay = `${(i * 0.45).toFixed(2)}s`;
-      pulseLinesGroup.appendChild(pulseLine);
+        // Animated pulse beam
+        const pulseLine = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pulseLine.setAttribute('d', pathData);
+        pulseLine.setAttribute('class', 'network-pulse-line');
+        pulseLine.setAttribute('id', `pulse-line-${i}`);
+        pulseLine.style.animationDelay = `${(i * 0.45).toFixed(2)}s`;
+        pulseFragment.appendChild(pulseLine);
+      });
 
+      baseLinesGroup.replaceChildren(baseFragment);
+      pulseLinesGroup.replaceChildren(pulseFragment);
     });
   }
 
@@ -119,14 +126,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const pLine = document.getElementById(`pulse-line-${i}`);
       if (bLine) bLine.classList.add('active-line');
       if (pLine) pLine.classList.add('active-pulse');
-    });
+    }, { passive: true });
 
     card.addEventListener('mouseleave', () => {
       const bLine = document.getElementById(`base-line-${i}`);
       const pLine = document.getElementById(`pulse-line-${i}`);
       if (bLine) bLine.classList.remove('active-line');
       if (pLine) pLine.classList.remove('active-pulse');
-    });
+    }, { passive: true });
 
     card.addEventListener('click', (e) => {
       const href = card.getAttribute('href');
@@ -136,14 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial draw & debounced resize listener
+  // Initial draw & debounced resize listener with passive flag
   setTimeout(updateNetworkLines, 100);
-  window.addEventListener('load', updateNetworkLines);
+  window.addEventListener('load', updateNetworkLines, { passive: true });
   let resizeTimeout;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(updateNetworkLines, 100);
-  });
+    resizeTimeout = setTimeout(updateNetworkLines, 120);
+  }, { passive: true });
 
 
   // 5. SHOWREEL VIDEO MODAL

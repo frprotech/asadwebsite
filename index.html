@@ -18,8 +18,14 @@
   <link rel="icon" href="assets/icons/icon-192x192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 
+  <!-- Preload Critical LCP Hero Poster -->
+  <link rel="preload" as="image" href="assets/hero/hp-bg.webp" type="image/webp" fetchpriority="high" />
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Defer Core Logic for Early Parallel Fetching Without Blocking Render -->
+  <script src="js/main.js" defer></script>
 </head>
 <body class="luxury-agency-theme">
   <!-- Accessibility Skip Link -->
@@ -30,7 +36,7 @@
     <div class="container nav-container">
       <a href="#" class="brand-logo" aria-label="Roger Sorkin Homepage">
         <div class="brand-logo-wrap">
-          <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" />
+          <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" fetchpriority="high" />
           <div class="brand-logo-text">
             <span class="logo-name">ROGER SORKIN</span>
             <span class="logo-tagline">STRATEGIC NARRATIVES</span>
@@ -62,7 +68,7 @@
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-video-wrap">
-        <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/hero/hp-bg.webp" class="hero-video">
+        <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/hero/hp-bg.webp" class="hero-video">
           <source src="assets/hero/RS-website-banner-4.mp4" type="video/mp4">
         </video>
         <div class="hero-spotlight-orb"></div>
@@ -134,38 +140,38 @@
       <div class="logo-carousel-wrapper">
         <div class="logo-carousel-track">
           <!-- 20 Client Logos -->
-          <div class="logo-slide"><img src="assets/logos/ASU.webp" alt="ASU Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/CCL.webp" alt="CCL Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/glidepath.webp" alt="Glidepath Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/E2.webp" alt="E2 Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/CEFA.webp" alt="CEFA Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/edf-logo-updated.webp" alt="EDF Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/Guggenhjeim.webp" alt="Guggenheim Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/IAA.webp" alt="IAA Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/MPT.webp" alt="MPT Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/NATO.webp" alt="NATO Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/Northampton.webp" alt="Northampton Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/pse.webp" alt="PSE Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/sierra-club.webp" alt="Sierra Club Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/gevo.webp" alt="Gevo Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/TFOC.webp" alt="TFOC Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/TiltGlobal.webp" alt="Tilt Global Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/WHRO.webp" alt="WHRO Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/Fordhamlogo.webp" alt="Fordham Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/ccs-logo.webp" alt="CCS Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/asp-logo.webp" alt="ASP Logo" loading="lazy" /></div>
+          <div class="logo-slide"><img src="assets/logos/ASU.webp" alt="ASU Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/CCL.webp" alt="CCL Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/glidepath.webp" alt="Glidepath Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/E2.webp" alt="E2 Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/CEFA.webp" alt="CEFA Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/edf-logo-updated.webp" alt="EDF Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/Guggenhjeim.webp" alt="Guggenheim Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/IAA.webp" alt="IAA Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/MPT.webp" alt="MPT Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/NATO.webp" alt="NATO Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/Northampton.webp" alt="Northampton Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/pse.webp" alt="PSE Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/sierra-club.webp" alt="Sierra Club Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/gevo.webp" alt="Gevo Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/TFOC.webp" alt="TFOC Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/TiltGlobal.webp" alt="Tilt Global Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/WHRO.webp" alt="WHRO Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/Fordhamlogo.webp" alt="Fordham Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/ccs-logo.webp" alt="CCS Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/asp-logo.webp" alt="ASP Logo" loading="lazy" decoding="async" height="48" /></div>
 
           <!-- Duplicate Set for Seamless Infinite Ticker -->
-          <div class="logo-slide"><img src="assets/logos/ASU.webp" alt="ASU Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/CCL.webp" alt="CCL Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/glidepath.webp" alt="Glidepath Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/E2.webp" alt="E2 Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/CEFA.webp" alt="CEFA Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/edf-logo-updated.webp" alt="EDF Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/Guggenhjeim.webp" alt="Guggenheim Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/IAA.webp" alt="IAA Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/MPT.webp" alt="MPT Logo" loading="lazy" /></div>
-          <div class="logo-slide"><img src="assets/logos/NATO.webp" alt="NATO Logo" loading="lazy" /></div>
+          <div class="logo-slide"><img src="assets/logos/ASU.webp" alt="ASU Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/CCL.webp" alt="CCL Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/glidepath.webp" alt="Glidepath Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/E2.webp" alt="E2 Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/CEFA.webp" alt="CEFA Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/edf-logo-updated.webp" alt="EDF Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/Guggenhjeim.webp" alt="Guggenheim Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/IAA.webp" alt="IAA Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/MPT.webp" alt="MPT Logo" loading="lazy" decoding="async" height="48" /></div>
+          <div class="logo-slide"><img src="assets/logos/NATO.webp" alt="NATO Logo" loading="lazy" decoding="async" height="48" /></div>
         </div>
       </div>
     </section>
@@ -398,7 +404,7 @@
 
             <div class="project-slide-card" data-project="10-rules">
               <div class="poster-mat-frame">
-                <img src="assets/projects/10-rules.webp" alt="10 Rules for Dealing with the Police" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/10-rules.webp" alt="10 Rules for Dealing with the Police" class="poster-uncropped" width="477" height="679" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Constitutional Rights</span>
@@ -416,7 +422,7 @@
 
             <div class="project-slide-card" data-project="the-burden">
               <div class="poster-mat-frame">
-                <img src="assets/projects/the-burden.webp" alt="The Burden Documentary Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/the-burden.webp" alt="The Burden Documentary Poster" class="poster-uncropped" width="700" height="1014" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">National Security</span>
@@ -434,7 +440,7 @@
 
             <div class="project-slide-card" data-project="tidewater">
               <div class="poster-mat-frame">
-                <img src="assets/projects/Tidewater-Poster-25.webp" alt="Tidewater Documentary Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/Tidewater-Poster-25.webp" alt="Tidewater Documentary Poster" class="poster-uncropped" width="1000" height="1333" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Sea Level Rise</span>
@@ -452,7 +458,7 @@
 
             <div class="project-slide-card" data-project="fordham">
               <div class="poster-mat-frame">
-                <img src="assets/projects/roger-sorkin-case-study.webp" alt="Fordham Case Study Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/roger-sorkin-case-study.webp" alt="Fordham Case Study Poster" class="poster-uncropped" width="1500" height="1941" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Executive Education</span>
@@ -470,7 +476,7 @@
 
             <div class="project-slide-card" data-project="clean-economy">
               <div class="poster-mat-frame">
-                <img src="assets/projects/clean-economy-now-cover.webp" alt="Clean Economy Now Cover" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/clean-economy-now-cover.webp" alt="Clean Economy Now Cover" class="poster-uncropped" width="1500" height="1941" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Public Policy</span>
@@ -488,7 +494,7 @@
 
             <div class="project-slide-card" data-project="farm-free">
               <div class="poster-mat-frame">
-                <img src="assets/projects/Farm-Free-Poster-18.webp" alt="Farm Free or Die Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/Farm-Free-Poster-18.webp" alt="Farm Free or Die Poster" class="poster-uncropped" width="1000" height="1294" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Agriculture</span>
@@ -506,7 +512,7 @@
 
             <div class="project-slide-card" data-project="current-rev">
               <div class="poster-mat-frame">
-                <img src="assets/projects/current-revolution.webp" alt="Current Revolution Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/current-revolution.webp" alt="Current Revolution Poster" class="poster-uncropped" width="1500" height="1941" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Grid Modernization</span>
@@ -524,7 +530,7 @@
 
             <div class="project-slide-card" data-project="nation-in-transition">
               <div class="poster-mat-frame">
-                <img src="assets/projects/Current-Rev-NIT-Poster-15.webp" alt="Nation in Transition Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/Current-Rev-NIT-Poster-15.webp" alt="Nation in Transition Poster" class="poster-uncropped" width="1000" height="1294" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Navajo Nation</span>
@@ -542,7 +548,7 @@
 
             <div class="project-slide-card" data-project="renewable-rural">
               <div class="poster-mat-frame">
-                <img src="assets/projects/renewable-energy-poster.webp" alt="Renewable Energy Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/renewable-energy-poster.webp" alt="Renewable Energy Poster" class="poster-uncropped" width="1000" height="1333" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Rural Advocacy</span>
@@ -560,7 +566,7 @@
 
             <div class="project-slide-card" data-project="resilient-ground">
               <div class="poster-mat-frame">
-                <img src="assets/projects/resilient-on-the-ground-poster-1.webp" alt="Resilient on the Ground Poster" class="poster-uncropped" loading="lazy" />
+                <img src="assets/projects/resilient-on-the-ground-poster-1.webp" alt="Resilient on the Ground Poster" class="poster-uncropped" width="1000" height="1333" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Aviation Infrastructure</span>
@@ -591,7 +597,7 @@
             <div class="portrait-pattern-backdrop"></div>
             <div class="portrait-card-frame-gradient">
               <img src="assets/logo icon.svg" alt="" class="portrait-logo-watermark" aria-hidden="true" />
-              <img src="assets/profile/roger-sorkin-high-res-profile.webp" alt="Roger Sorkin Strategic Communications Specialist" class="portrait-img" loading="lazy" />
+              <img src="assets/profile/roger-sorkin-high-res-profile.webp" alt="Roger Sorkin Strategic Communications Specialist" class="portrait-img" width="1096" height="1344" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -836,7 +842,7 @@
   <!-- HIGH-END AGENCY FOOTER ALIGNED STRICTLY WITH OFFICIAL SITE LINKS -->
   <footer class="footer-modern">
     <div class="footer-ambient-bg">
-      <img src="assets/logo icon.svg" alt="" class="footer-watermark-logo" aria-hidden="true" />
+      <img src="assets/logo icon.svg" alt="" class="footer-watermark-logo" aria-hidden="true" width="400" height="400" loading="lazy" decoding="async" />
     </div>
 
     <div class="container">
@@ -846,7 +852,7 @@
         <div class="footer-col brand-col">
           <a href="#" class="footer-brand-logo">
             <div class="brand-logo-wrap">
-              <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" />
+              <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" loading="lazy" decoding="async" />
               <div class="brand-logo-text">
                 <span class="logo-name" style="font-size: 1.25rem;">ROGER SORKIN</span>
                 <span class="logo-tagline" style="font-size: 0.65rem;">STRATEGIC NARRATIVES</span>
@@ -893,7 +899,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="js/main.js"></script>
 </body>
 </html>

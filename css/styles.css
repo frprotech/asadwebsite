@@ -489,7 +489,8 @@ img, video, svg {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform;
   width: 750px;
   height: 750px;
   background: radial-gradient(circle, rgba(85, 134, 134, 0.28) 0%, rgba(28, 113, 153, 0.12) 50%, transparent 75%);
@@ -664,11 +665,13 @@ img, video, svg {
   gap: 54px;
   width: max-content;
   animation: logoTicker 35s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 @keyframes logoTicker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 .logo-slide {
@@ -1081,6 +1084,8 @@ img, video, svg {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-top: 16px;
@@ -1712,15 +1717,6 @@ img, video, svg {
   object-fit: cover;
 }
 
-.modal-body img {
-  width: 100%;
-  max-height: 380px;
-  object-fit: contain;
-  background: #000000;
-  padding: 12px;
-  border-radius: var(--radius-md);
-  margin-bottom: 24px;
-}
 
 /* --------------------------------------------------------------------------
    15. COMPREHENSIVE RESPONSIVE MEDIA QUERIES (ZERO HORIZONTAL SCROLL)
@@ -2085,3 +2081,48 @@ img, video, svg {
     font-size: 0.85rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   16. PERFORMANCE & CORE WEB VITALS OPTIMIZATIONS
+   -------------------------------------------------------------------------- */
+
+/* Defer offscreen rendering to accelerate FCP, LCP and Total Blocking Time */
+.section-projects {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+.section-about {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 750px;
+}
+
+.section-testimonials {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 550px;
+}
+
+.section-contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 650px;
+}
+
+.footer-modern {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
+/* Accessibility & Battery Optimization for Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .logo-carousel-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
