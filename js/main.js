@@ -113,29 +113,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalBody = document.getElementById('modalBody');
   const modalClose = document.getElementById('modalClose');
 
-  document.querySelectorAll('.open-modal-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const card = btn.closest('.project-slide-card');
-      const projectKey = card ? card.dataset.project : null;
-      const data = projectsData[projectKey];
+  function openCaseStudyModal(projectKey) {
+    const data = projectsData[projectKey];
+    if (data && projectModal && modalBody) {
+      modalBody.innerHTML = `
+        <img src="${data.img}" alt="${data.title}" />
+        <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--color-teal-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${data.tag}</span>
+        <h3 style="font-size:1.8rem; font-weight:800; color:#fff; margin-bottom:14px;">${data.title}</h3>
+        <p style="font-size:1rem; color:var(--color-text-muted-light); line-height:1.6; margin-bottom:20px;">${data.desc}</p>
+        <div style="background:rgba(255,255,255,0.06); padding:16px 20px; border-radius:12px; border-left:4px solid var(--color-teal); margin-bottom:24px;">
+          <strong style="color:#fff; display:block; margin-bottom:4px;">Documented Impact:</strong>
+          <span style="color:var(--color-text-muted-light); font-size:0.9rem;">${data.impact}</span>
+        </div>
+        <div class="modal-footer-cta">
+          <a href="#contact" class="btn btn-primary" onclick="document.getElementById('projectModal').close();">Discuss Similar Strategy &rarr;</a>
+        </div>
+      `;
+      projectModal.showModal();
+    }
+  }
 
-      if (data && projectModal && modalBody) {
-        modalBody.innerHTML = `
-          <img src="${data.img}" alt="${data.title}" />
-          <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:var(--color-teal-light); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">${data.tag}</span>
-          <h3 style="font-size:1.8rem; font-weight:800; color:#fff; margin-bottom:14px;">${data.title}</h3>
-          <p style="font-size:1rem; color:var(--color-text-muted-light); line-height:1.6; margin-bottom:20px;">${data.desc}</p>
-          <div style="background:rgba(255,255,255,0.06); padding:16px 20px; border-radius:12px; border-left:4px solid var(--color-teal); margin-bottom:24px;">
-            <strong style="color:#fff; display:block; margin-bottom:4px;">Documented Impact:</strong>
-            <span style="color:var(--color-text-muted-light); font-size:0.9rem;">${data.impact}</span>
-          </div>
-          <div class="modal-footer-cta">
-            <a href="#contact" class="btn btn-primary" onclick="document.getElementById('projectModal').close();">Discuss Similar Strategy &rarr;</a>
-          </div>
-        `;
-        projectModal.showModal();
-      }
+  document.querySelectorAll('.project-slide-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const projectKey = card.dataset.project;
+      if (projectKey) openCaseStudyModal(projectKey);
     });
   });
 
