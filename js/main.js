@@ -40,70 +40,70 @@ document.addEventListener('DOMContentLoaded', () => {
     '10-rules': {
       title: '10 Rules for Dealing with the Police',
       tag: 'Constitutional Rights Simulation',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/10-rules.jpg',
+      img: 'assets/projects/10-rules.jpg',
       desc: 'Created with Flex Your Rights and used across the political spectrum from the ACLU to the CATO Institute to teach citizens how to exercise constitutional rights safely during police encounters.',
       impact: 'Distributed nationally, screening in hundreds of schools, universities, and advocacy workshops.'
     },
     'the-burden': {
       title: 'The Burden: Fossil Fuels & National Security',
       tag: 'Defense & Clean Energy',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/the-burden.jpg',
+      img: 'assets/projects/the-burden.jpg',
       desc: 'Reframing climate change and clean energy through the lens of US military readiness and national security to move conservative legislators, veterans, and defense leaders.',
       impact: 'Catalyzed bipartisan Congressional briefings and shaped military microgrid deployment strategy.'
     },
     'tidewater': {
       title: 'Tidewater: Sea Level Rise & Military Readiness',
       tag: 'Military Infrastructure',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/Tidewater-Poster-25.jpg',
+      img: 'assets/projects/Tidewater-Poster-25.jpg',
       desc: 'Addressing sea level rise as a direct threat to US military installations and regional economies in Hampton Roads, Virginia.',
       impact: 'Bypassed political paralysis and led to multi-agency coastal resilience task forces.'
     },
     'fordham': {
       title: 'Fordham University Gabelli School of Business',
       tag: 'Executive Education',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/11/roger-sorkin-case-study.jpg',
+      img: 'assets/projects/roger-sorkin-case-study.jpg',
       desc: 'Immersive simulations for MBA cohorts preparing future business leaders to navigate sensitive, highly contested corporate communication challenges.',
       impact: 'Integrated into core executive MBA curriculum.'
     },
     'clean-economy': {
       title: 'Clean Economy Now',
       tag: 'Public Policy',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/clean-economy-now-cover.jpg',
+      img: 'assets/projects/clean-economy-now-cover.jpg',
       desc: 'Designed to influence public policy by articulating the economic rationale behind clean energy infrastructure and job growth.',
       impact: 'Mobilized business leaders across 12 states for legislative advocacy.'
     },
     'farm-free': {
       title: 'Farm Free or Die',
       tag: 'Regenerative Agriculture',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/Farm-Free-Poster-18.jpg',
+      img: 'assets/projects/Farm-Free-Poster-18.jpg',
       desc: 'Centering voices of American farmers to demonstrate how regenerative agriculture rebuilds rural economies and safeguards food security.',
       impact: 'Screened at Congressional Farm Bill hearings to advocate for soil health incentives.'
     },
     'current-rev': {
       title: 'Current Revolution: Film Series',
       tag: 'Energy Transition',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/05/current-revolution.jpg',
+      img: 'assets/projects/current-revolution.jpg',
       desc: 'Multi-film documentary series examining grid modernization and showing how combustion engine workers can transition into renewable energy careers.',
       impact: 'Partnered with utility providers and labor unions for workforce retraining advocacy.'
     },
     'nation-in-transition': {
       title: 'Nation in Transition',
       tag: 'Tribal Sovereignty',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/06/Current-Rev-NIT-Poster-15.jpg',
+      img: 'assets/projects/Current-Rev-NIT-Poster-15.jpg',
       desc: 'Documenting coal-to-renewable transition in the Navajo Nation, offering a human-centered roadmap for energy transitions globally.',
       impact: 'Helped secure federal renewable energy grants for tribal communities.'
     },
     'renewable-rural': {
       title: 'Renewable Energy Works for Rural America',
       tag: 'Rural Advocacy',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/06/renewable-energy-poster.jpg',
+      img: 'assets/projects/renewable-energy-poster.jpg',
       desc: 'Social media video campaign produced for environmental non-profits to defend rural clean energy economic gains.',
       impact: 'Generated over 2 million organic video views across agricultural communities.'
     },
     'resilient-ground': {
       title: 'Resilient on the Ground',
       tag: 'Workforce Alignment',
-      img: 'https://rogersorkin.com/wp-content/uploads/2025/06/resilient-on-the-ground-poster-1.jpg',
+      img: 'assets/projects/resilient-on-the-ground-poster-1.jpg',
       desc: 'Documentary film created for a major US airport telling their sustainability success story and aligning a 10,000-employee workforce.',
       impact: 'Achieved 94% workforce alignment in post-viewing surveys.'
     }
