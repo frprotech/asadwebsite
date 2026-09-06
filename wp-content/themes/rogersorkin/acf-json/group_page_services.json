@@ -1,0 +1,328 @@
+{
+  "key": "group_page_services",
+  "title": "Services Page Configuration",
+  "fields": [
+    {
+      "key": "tab_sp_hero",
+      "label": "Hero Banner",
+      "type": "tab"
+    },
+    {
+      "key": "field_sp_badge",
+      "label": "Hero Pill Badge",
+      "name": "hero_badge_text",
+      "type": "text",
+      "default_value": "STRATEGIC COMMUNICATIONS & DOCUMENTARY FILM"
+    },
+    {
+      "key": "field_sp_title_line1",
+      "label": "Hero Title Line 1",
+      "name": "hero_title_line1",
+      "type": "text",
+      "default_value": "A Range of Services to Meet"
+    },
+    {
+      "key": "field_sp_title_line2",
+      "label": "Hero Title Line 2 (Gradient)",
+      "name": "hero_title_line2",
+      "type": "text",
+      "default_value": "Your Communications Needs."
+    },
+    {
+      "key": "field_sp_subtitle",
+      "label": "Hero Subtitle",
+      "name": "hero_subtitle",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "Organizations face more communications demands than ever: internal alignment, public storytelling, executive visibility, media engagement, and high-impact content. Few teams can take all of it on alone. Here is how Roger Sorkin delivers strategic advantage."
+    },
+    {
+      "key": "tab_sp_stats_bar",
+      "label": "Trust Bar / Key Stats",
+      "type": "tab"
+    },
+    {
+      "key": "field_sp_stat_1_num",
+      "label": "Stat 1 Number / Heading",
+      "name": "stat_1_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_1_label",
+      "label": "Stat 1 Description / Label",
+      "name": "stat_1_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_2_num",
+      "label": "Stat 2 Number / Heading",
+      "name": "stat_2_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_2_label",
+      "label": "Stat 2 Description / Label",
+      "name": "stat_2_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_3_num",
+      "label": "Stat 3 Number / Heading",
+      "name": "stat_3_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_3_label",
+      "label": "Stat 3 Description / Label",
+      "name": "stat_3_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_4_num",
+      "label": "Stat 4 Number / Heading",
+      "name": "stat_4_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_stat_4_label",
+      "label": "Stat 4 Description / Label",
+      "name": "stat_4_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "tab_sp_models",
+      "label": "Engagement Models Section",
+      "type": "tab"
+    },
+    {
+      "key": "field_sp_models_tag",
+      "label": "Models Section Tag",
+      "name": "models_tag",
+      "type": "text",
+      "default_value": "ENGAGEMENT MODELS"
+    },
+    {
+      "key": "field_sp_models_title",
+      "label": "Models Section Title",
+      "name": "models_title",
+      "type": "text",
+      "default_value": "How We Work Together"
+    },
+    {
+      "key": "field_sp_models_subtitle",
+      "label": "Models Subtitle",
+      "name": "models_subtitle",
+      "type": "textarea",
+      "rows": 2,
+      "default_value": "Whether you need ongoing executive advisory, an intensive workshop, or a full documentary production, we offer structured models to fit your timeline and goals."
+    },
+    {
+      "key": "field_sp_m1_badge",
+      "label": "Model 1 Tier Badge",
+      "name": "model_1_badge",
+      "type": "text",
+      "default_value": "MODEL 01 \u2022 STRATEGIC COUNSEL"
+    },
+    {
+      "key": "field_sp_m1_title",
+      "label": "Model 1 Title",
+      "name": "model_1_title",
+      "type": "text",
+      "default_value": "Executive Retainers"
+    },
+    {
+      "key": "field_sp_m1_desc",
+      "label": "Model 1 Description",
+      "name": "model_1_desc",
+      "type": "textarea",
+      "rows": 2,
+      "default_value": "Ongoing fractional C-suite leadership and trusted counsel embedded directly alongside your executive team."
+    },
+    {
+      "key": "field_sp_m1_features",
+      "label": "Model 1 Features (One per line)",
+      "name": "model_1_features",
+      "type": "textarea",
+      "rows": 4,
+      "default_value": "Fractional Communications Officer role\nWeekly senior strategy & review calls\nCrisis preparedness & response standby\nDirect CEO & board advisory access"
+    },
+    {
+      "key": "field_sp_m1_btn_label",
+      "label": "Model 1 Button Label",
+      "name": "model_1_btn_label",
+      "type": "text",
+      "default_value": "Inquire About Retainer",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_m1_btn_url",
+      "label": "Model 1 Button URL",
+      "name": "model_1_btn_url",
+      "type": "text",
+      "default_value": "/contact/",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_m2_badge",
+      "label": "Model 2 Tier Badge",
+      "name": "model_2_badge",
+      "type": "text",
+      "default_value": "MODEL 02 \u2022 DIAGNOSTIC"
+    },
+    {
+      "key": "field_sp_m2_title",
+      "label": "Model 2 Title",
+      "name": "model_2_title",
+      "type": "text",
+      "default_value": "Focused Intensives"
+    },
+    {
+      "key": "field_sp_m2_desc",
+      "label": "Model 2 Description",
+      "name": "model_2_desc",
+      "type": "textarea",
+      "rows": 2,
+      "default_value": "Concentrated, time-boxed engagements that diagnose narrative friction or prepare teams for critical public events."
+    },
+    {
+      "key": "field_sp_m2_features",
+      "label": "Model 2 Features (One per line)",
+      "name": "model_2_features",
+      "type": "textarea",
+      "rows": 4,
+      "default_value": "Comprehensive Communications Audit\nCustom role-playing simulations (1-3 days)\nExecutive coaching prior to major hearings\nDetailed actionable findings report"
+    },
+    {
+      "key": "field_sp_m2_btn_label",
+      "label": "Model 2 Button Label",
+      "name": "model_2_btn_label",
+      "type": "text",
+      "default_value": "Schedule an Intensive",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_m2_btn_url",
+      "label": "Model 2 Button URL",
+      "name": "model_2_btn_url",
+      "type": "text",
+      "default_value": "/contact/",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_m3_badge",
+      "label": "Model 3 Tier Badge",
+      "name": "model_3_badge",
+      "type": "text",
+      "default_value": "MODEL 03 \u2022 PRODUCTION"
+    },
+    {
+      "key": "field_sp_m3_title",
+      "label": "Model 3 Title",
+      "name": "model_3_title",
+      "type": "text",
+      "default_value": "Creative Systems"
+    },
+    {
+      "key": "field_sp_m3_desc",
+      "label": "Model 3 Description",
+      "name": "model_3_desc",
+      "type": "textarea",
+      "rows": 2,
+      "default_value": "Full-cycle content infrastructure that convenes key decision-makers and establishes in-house production capability."
+    },
+    {
+      "key": "field_sp_m3_features",
+      "label": "Model 3 Features (One per line)",
+      "name": "model_3_features",
+      "type": "textarea",
+      "rows": 4,
+      "default_value": "Documentary film production & distribution\nContent Roadmap systems for in-house teams\nEnd-to-end podcast series production\nScreening tour convening policymakers"
+    },
+    {
+      "key": "field_sp_m3_btn_label",
+      "label": "Model 3 Button Label",
+      "name": "model_3_btn_label",
+      "type": "text",
+      "default_value": "Commission Creative",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_sp_m3_btn_url",
+      "label": "Model 3 Button URL",
+      "name": "model_3_btn_url",
+      "type": "text",
+      "default_value": "/contact/",
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-services.php"
+      }
+    ],
+    [
+      {
+        "param": "post_template",
+        "operator": "==",
+        "value": "page-services.php"
+      }
+    ],
+    [
+      {
+        "param": "page_slug",
+        "operator": "==",
+        "value": "services"
+      }
+    ]
+  ],
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content"
+  ],
+  "menu_order": 0,
+  "active": true,
+  "show_in_rest": 0,
+  "modified": 1788734907
+}

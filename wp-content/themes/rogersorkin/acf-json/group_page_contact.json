@@ -1,0 +1,186 @@
+{
+  "key": "group_page_contact",
+  "title": "Contact Page Configuration",
+  "fields": [
+    {
+      "key": "tab_cp_hero",
+      "label": "Hero Banner",
+      "type": "tab"
+    },
+    {
+      "key": "field_cp_badge",
+      "label": "Hero Pill Badge",
+      "name": "hero_badge_text",
+      "type": "text",
+      "default_value": "LET'S CONNECT"
+    },
+    {
+      "key": "field_cp_title_line1",
+      "label": "Hero Title Line 1",
+      "name": "hero_title_line1",
+      "type": "text",
+      "default_value": "Start the Conversation:"
+    },
+    {
+      "key": "field_cp_title_line2",
+      "label": "Hero Title Line 2 (Gradient)",
+      "name": "hero_title_line2",
+      "type": "text",
+      "default_value": "Narrative Strategy & Advisory"
+    },
+    {
+      "key": "field_cp_subtitle",
+      "label": "Hero Subtitle",
+      "name": "hero_subtitle",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "Whether navigating executive communication hurdles, preparing for legislative debate, or seeking to commission a documentary film, Roger Sorkin is available for confidential advisory."
+    },
+    {
+      "key": "tab_cp_details",
+      "label": "Contact Info & Locations",
+      "type": "tab"
+    },
+    {
+      "key": "field_cp_loc_title",
+      "label": "Location Label",
+      "name": "location_title",
+      "type": "text",
+      "default_value": "Base of Operations & Global Reach"
+    },
+    {
+      "key": "field_cp_loc_desc",
+      "label": "Location Description",
+      "name": "location_desc",
+      "type": "textarea",
+      "rows": 2,
+      "default_value": "Available for on-site client immersions and keynote delivery globally."
+    },
+    {
+      "key": "field_cp_box_title",
+      "label": "Inquiry Box Title",
+      "name": "inquiry_box_title",
+      "type": "text",
+      "default_value": "Direct Consultation & Advisory"
+    },
+    {
+      "key": "field_cp_box_desc",
+      "label": "Inquiry Box Description",
+      "name": "inquiry_box_desc",
+      "type": "textarea",
+      "rows": 3,
+      "default_value": "Roger Sorkin works with a limited number of organizations, coalitions, and production partners each year to ensure uncompromising depth, senior-level attention, and narrative impact."
+    },
+    {
+      "key": "tab_cp_stats_bar",
+      "label": "Trust Bar / Key Stats",
+      "type": "tab"
+    },
+    {
+      "key": "field_cp_stat_1_num",
+      "label": "Stat 1 Number / Heading",
+      "name": "stat_1_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_1_label",
+      "label": "Stat 1 Description / Label",
+      "name": "stat_1_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_2_num",
+      "label": "Stat 2 Number / Heading",
+      "name": "stat_2_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_2_label",
+      "label": "Stat 2 Description / Label",
+      "name": "stat_2_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_3_num",
+      "label": "Stat 3 Number / Heading",
+      "name": "stat_3_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_3_label",
+      "label": "Stat 3 Description / Label",
+      "name": "stat_3_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_4_num",
+      "label": "Stat 4 Number / Heading",
+      "name": "stat_4_num",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_cp_stat_4_label",
+      "label": "Stat 4 Description / Label",
+      "name": "stat_4_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-contact.php"
+      }
+    ],
+    [
+      {
+        "param": "post_template",
+        "operator": "==",
+        "value": "page-contact.php"
+      }
+    ],
+    [
+      {
+        "param": "page_slug",
+        "operator": "==",
+        "value": "contact"
+      }
+    ]
+  ],
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content"
+  ],
+  "menu_order": 0,
+  "active": true,
+  "show_in_rest": 0,
+  "modified": 1788734907
+}

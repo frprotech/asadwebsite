@@ -1,0 +1,123 @@
+{
+  "key": "group_service_details",
+  "title": "Service Configuration & Deliverables",
+  "fields": [
+    {
+      "key": "tab_srv_overview",
+      "label": "Service Overview",
+      "type": "tab"
+    },
+    {
+      "key": "field_srv_anchor_id",
+      "label": "Anchor ID (slug on services page)",
+      "name": "anchor_id",
+      "type": "text"
+    },
+    {
+      "key": "field_srv_tagline",
+      "label": "Short Tagline",
+      "name": "tagline",
+      "type": "text"
+    },
+    {
+      "key": "field_srv_cap_tag",
+      "label": "Capability Tag",
+      "name": "capability_tag",
+      "type": "text",
+      "default_value": "CAPABILITY 01 \u2022 STRATEGIC LEADERSHIP"
+    },
+    {
+      "key": "field_srv_title_l1",
+      "label": "Heading Line 1",
+      "name": "title_line1",
+      "type": "text"
+    },
+    {
+      "key": "field_srv_title_l2",
+      "label": "Heading Line 2",
+      "name": "title_line2",
+      "type": "text"
+    },
+    {
+      "key": "field_srv_lead",
+      "label": "Lead Paragraph",
+      "name": "lead_text",
+      "type": "textarea",
+      "rows": 3
+    },
+    {
+      "key": "field_srv_body",
+      "label": "Body Paragraph",
+      "name": "body_text",
+      "type": "textarea",
+      "rows": 3
+    },
+    {
+      "key": "field_srv_deliv_title",
+      "label": "Deliverables Box Title",
+      "name": "deliverables_title",
+      "type": "text",
+      "default_value": "Core Capabilities & Deliverables"
+    },
+    {
+      "key": "field_srv_deliv_text",
+      "label": "Deliverables (One item per line)",
+      "name": "deliverables_text",
+      "type": "textarea",
+      "rows": 4
+    },
+    {
+      "key": "field_srv_photo",
+      "label": "Service Section Photo (Upload custom image or leave empty for default)",
+      "name": "photo",
+      "type": "image",
+      "return_format": "array"
+    },
+    {
+      "key": "field_srv_photo_path",
+      "label": "Asset Photo Fallback Path",
+      "name": "photo_path",
+      "type": "text"
+    },
+    {
+      "key": "field_srv_cta_label",
+      "label": "Action Button Label",
+      "name": "cta_label",
+      "type": "text",
+      "default_value": "Engage Service \u2192",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_srv_cta_url",
+      "label": "Action Button URL",
+      "name": "cta_url",
+      "type": "text",
+      "default_value": "/contact/",
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "service"
+      }
+    ]
+  ],
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content"
+  ],
+  "menu_order": 0,
+  "active": true,
+  "show_in_rest": 0,
+  "modified": 1788734907
+}

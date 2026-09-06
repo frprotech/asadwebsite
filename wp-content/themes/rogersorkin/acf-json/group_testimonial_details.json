@@ -1,0 +1,48 @@
+{
+  "key": "group_testimonial_details",
+  "title": "Testimonial Details",
+  "fields": [
+    {
+      "key": "field_tst_title",
+      "label": "Author Title & Organization",
+      "name": "author_title",
+      "type": "text",
+      "default_value": "USN (RET.)"
+    },
+    {
+      "key": "field_tst_quote",
+      "label": "Testimonial Quote",
+      "name": "quote",
+      "type": "textarea",
+      "rows": 4
+    },
+    {
+      "key": "field_tst_feat",
+      "label": "Show on Homepage Slider",
+      "name": "featured_home",
+      "type": "true_false",
+      "ui": 1,
+      "default_value": 1
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "testimonial"
+      }
+    ]
+  ],
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content"
+  ],
+  "menu_order": 0,
+  "active": true,
+  "show_in_rest": 0,
+  "modified": 1788734907
+}
