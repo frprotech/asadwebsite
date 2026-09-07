@@ -187,7 +187,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 
 
-  // 5. SHOWREEL VIDEO MODAL
+  // 4.5 HERO BACKGROUND VIDEO DEFERRED LOADER
+  // Allows critical images to load instantly before fetching the background video stream
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    const videoSource = heroVideo.querySelector('source[data-src]');
+    if (videoSource && window.innerWidth >= 768) {
+      const loadHeroVideo = () => {
+        if (!videoSource.src) {
+          videoSource.src = videoSource.getAttribute('data-src');
+          heroVideo.load();
+          heroVideo.play().catch(() => {});
+        }
+      };
+
+      if (document.readyState === 'complete') {
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(loadHeroVideo, { timeout: 1200 });
+        } else {
+          setTimeout(loadHeroVideo, 600);
+        }
+      } else {
+        window.addEventListener('load', () => {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadHeroVideo, { timeout: 1200 });
+          } else {
+            setTimeout(loadHeroVideo, 600);
+          }
+        }, { once: true });
+      }
+    }
+  }
+
+  // 5. SHOWREEL VIDEO MODAL (Lazy loads video on user interaction)
   const openReelBtn = document.getElementById('openReelBtn');
   const reelModal = document.getElementById('reelModal');
   const reelClose = document.getElementById('reelClose');
@@ -195,8 +227,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (openReelBtn && reelModal) {
     openReelBtn.addEventListener('click', () => {
+      if (modalReelVideo) {
+        const modalSource = modalReelVideo.querySelector('source[data-src]');
+        if (modalSource && !modalSource.src) {
+          modalSource.src = modalSource.getAttribute('data-src');
+          modalReelVideo.load();
+        }
+        modalReelVideo.play().catch(() => {});
+      }
       reelModal.showModal();
-      if (modalReelVideo) modalReelVideo.play();
     });
   }
 
@@ -281,4 +320,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // 10. SERVICES PAGE SUBNAV ACTIVE HIGHLIGHT
+  const servicePills = document.querySelectorAll('.service-nav-pill');
+  const serviceSections = document.querySelectorAll('.service-section');
+  if (servicePills.length && serviceSections.length && 'IntersectionObserver' in window) {
+    const serviceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          servicePills.forEach(pill => {
+            const href = pill.getAttribute('href');
+            const isActive = href === `#${id}`;
+            pill.classList.toggle('active', isActive);
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    });
+    serviceSections.forEach(section => serviceObserver.observe(section));
+  }
 });
+

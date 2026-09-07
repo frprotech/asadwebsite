@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <title>Roger Sorkin | Strategic Communications & Narrative Risk Specialist</title>
   <meta name="description" content="Filmmaker, journalist, and communications strategist Roger Sorkin transforms complex environmental, economic, and security challenges into strategic narratives." />
@@ -12,11 +13,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Favicons & Brand Icon -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo icon.svg" />
-  <link rel="icon" href="assets/icons/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" href="assets/icons/icon-192x192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <!-- Favicons (from assets/icons) -->
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
 
   <!-- Preload Critical LCP Hero Poster -->
   <link rel="preload" as="image" href="assets/hero/hp-bg.webp" type="image/webp" fetchpriority="high" />
@@ -34,9 +35,9 @@
   <!-- Modern Floating Header -->
   <header class="navbar" id="navbar">
     <div class="container nav-container">
-      <a href="#" class="brand-logo" aria-label="Roger Sorkin Homepage">
+      <a href="index.html" class="brand-logo" aria-label="Roger Sorkin Homepage">
         <div class="brand-logo-wrap">
-          <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" fetchpriority="high" />
+          <img src="assets/logo icon.svg" alt="Roger Sorkin Logo Icon" class="logo-icon-img" width="40" height="40" fetchpriority="high" decoding="async" />
           <div class="brand-logo-text">
             <span class="logo-name">ROGER SORKIN</span>
             <span class="logo-tagline">STRATEGIC NARRATIVES</span>
@@ -56,14 +57,14 @@
 
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="https://springgreen-butterfly-856725.hostingersite.com/blog/" target="_blank" rel="noopener" class="nav-link">Blog</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         <div class="nav-actions">
-          <a href="#contact" class="btn btn-primary btn-sm glow-btn">Work With Me</a>
+          <a href="contact.html" class="btn btn-primary btn-sm glow-btn">Work With Me</a>
         </div>
       </nav>
     </div>
@@ -73,8 +74,8 @@
     <!-- HERO SECTION -->
     <section class="hero-section" id="hero">
       <div class="hero-video-wrap">
-        <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="assets/hero/hp-bg.webp" class="hero-video">
-          <source src="assets/hero/RS-website-banner-4.mp4" type="video/mp4">
+        <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="none" poster="assets/hero/hp-bg.webp" class="hero-video">
+          <source data-src="assets/hero/RS-website-banner-4.mp4" type="video/mp4">
         </video>
         <div class="hero-spotlight-orb"></div>
         <div class="hero-overlay"></div>
@@ -98,7 +99,7 @@
           </p>
 
           <div class="hero-ctas">
-            <a href="#contact" class="btn btn-primary btn-lg glow-btn">
+            <a href="contact.html" class="btn btn-primary btn-lg glow-btn">
               <span>Book Strategy Session</span>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
@@ -219,7 +220,7 @@
           <!-- Left Column: 4 Services -->
           <div class="services-cards-col left-col">
             <!-- Card 1 -->
-            <a href="#" class="hub-service-card" data-service="fractional-cco" data-index="0">
+            <a href="services.html#fractional-cco" class="hub-service-card" data-service="fractional-cco" data-index="0">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               </div>
@@ -234,7 +235,7 @@
             </a>
 
             <!-- Card 2 -->
-            <a href="#" class="hub-service-card" data-service="audit" data-index="1">
+            <a href="services.html#audit" class="hub-service-card" data-service="audit" data-index="1">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>
               </div>
@@ -249,7 +250,7 @@
             </a>
 
             <!-- Card 3 -->
-            <a href="#" class="hub-service-card" data-service="simulations" data-index="2">
+            <a href="services.html#simulations" class="hub-service-card" data-service="simulations" data-index="2">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               </div>
@@ -264,7 +265,7 @@
             </a>
 
             <!-- Card 4 -->
-            <a href="#" class="hub-service-card" data-service="media-training" data-index="3">
+            <a href="services.html#media-training" class="hub-service-card" data-service="media-training" data-index="3">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
               </div>
@@ -297,7 +298,7 @@
           <!-- Right Column: 4 Services -->
           <div class="services-cards-col right-col">
             <!-- Card 5 -->
-            <a href="#" class="hub-service-card" data-service="coaching" data-index="4">
+            <a href="services.html#coaching" class="hub-service-card" data-service="coaching" data-index="4">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </div>
@@ -312,7 +313,7 @@
             </a>
 
             <!-- Card 6 -->
-            <a href="#" class="hub-service-card" data-service="content-roadmap" data-index="5">
+            <a href="services.html#content-roadmap" class="hub-service-card" data-service="content-roadmap" data-index="5">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
               </div>
@@ -327,7 +328,7 @@
             </a>
 
             <!-- Card 7 -->
-            <a href="#" class="hub-service-card" data-service="podcast" data-index="6">
+            <a href="services.html#podcast" class="hub-service-card" data-service="podcast" data-index="6">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
               </div>
@@ -342,7 +343,7 @@
             </a>
 
             <!-- Card 8 -->
-            <a href="#" class="hub-service-card" data-service="filmmaking" data-index="7">
+            <a href="services.html#filmmaking" class="hub-service-card" data-service="filmmaking" data-index="7">
               <div class="card-icon-box">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
               </div>
@@ -360,7 +361,7 @@
 
         <!-- Section Footer CTA -->
         <div class="services-hub-footer text-center">
-          <a href="#contact" class="btn btn-primary btn-lg glow-btn">
+          <a href="contact.html" class="btn btn-primary btn-lg glow-btn">
             <span>Discuss Your Communications Strategy</span>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
@@ -381,7 +382,8 @@
             </p>
           </div>
 
-          <div class="slider-nav-controls">
+          <div class="slider-nav-controls" style="display: flex; align-items: center; gap: 14px;">
+            <a href="projects.html" class="btn btn-outline-light btn-sm" style="padding: 8px 18px; font-size: 0.85rem;">View All 11 Projects &rarr;</a>
             <button class="slider-arrow" id="prevProjectBtn" aria-label="Previous Slide">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             </button>
@@ -397,13 +399,13 @@
 
             <div class="project-slide-card" data-project="10-rules">
               <div class="poster-mat-frame">
-                <img src="assets/projects/10-rules.webp" alt="10 Rules for Dealing with the Police" class="poster-uncropped" width="477" height="679" decoding="async" />
+                <img src="assets/projects/10-rules.webp" alt="10 Rules for Dealing with the Police" class="poster-uncropped" width="477" height="679" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Constitutional Rights</span>
                     <h3 class="hover-heading">10 Rules for Dealing with the Police</h3>
                     <p class="hover-text">Created with Flex Your Rights and used across the political spectrum from the ACLU to the CATO Institute to teach citizens how to exercise constitutional rights safely.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-10-rules-for-dealing-with-police.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -415,13 +417,13 @@
 
             <div class="project-slide-card" data-project="the-burden">
               <div class="poster-mat-frame">
-                <img src="assets/projects/the-burden.webp" alt="The Burden Documentary Poster" class="poster-uncropped" width="497" height="720" decoding="async" />
+                <img src="assets/projects/the-burden.webp" alt="The Burden Documentary Poster" class="poster-uncropped" width="497" height="720" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">National Security</span>
                     <h3 class="hover-heading">The Burden</h3>
                     <p class="hover-text">Reframing climate change and clean energy through the lens of US military readiness and national security to move conservative legislators and veterans.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="case-study-the-burden.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -433,13 +435,13 @@
 
             <div class="project-slide-card" data-project="tidewater">
               <div class="poster-mat-frame">
-                <img src="assets/projects/Tidewater-Poster-25.webp" alt="Tidewater Documentary Poster" class="poster-uncropped" width="540" height="720" decoding="async" />
+                <img src="assets/projects/Tidewater-Poster-25.webp" alt="Tidewater Documentary Poster" class="poster-uncropped" width="540" height="720" loading="lazy" decoding="async" />
                 <div class="poster-hover-layer">
                   <div class="hover-details">
                     <span class="tag-pill">Sea Level Rise</span>
                     <h3 class="hover-heading">Tidewater</h3>
                     <p class="hover-text">Addressing sea level rise as a direct threat to US military installations and regional economies, overcoming political deadlock for bipartisan flood mitigation.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-tidewater.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -457,7 +459,7 @@
                     <span class="tag-pill">Executive Education</span>
                     <h3 class="hover-heading">Fordham University Business School</h3>
                     <p class="hover-text">Immersive simulations for Gabelli School of Business cohort preparing future business leaders to navigate sensitive, highly contested conversations.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-fordham-university.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -475,7 +477,7 @@
                     <span class="tag-pill">Public Policy</span>
                     <h3 class="hover-heading">Clean Economy Now</h3>
                     <p class="hover-text">Designed to influence public policy by articulating the economic rationale behind clean energy infrastructure and job growth.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-clean-economy-now.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -493,7 +495,7 @@
                     <span class="tag-pill">Agriculture</span>
                     <h3 class="hover-heading">Farm Free or Die</h3>
                     <p class="hover-text">Centering voices of American farmers to demonstrate how regenerative agriculture rebuilds rural economies and safeguards food security.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-farm-free-or-die.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -511,7 +513,7 @@
                     <span class="tag-pill">Grid Modernization</span>
                     <h3 class="hover-heading">Current Revolution: Film Series</h3>
                     <p class="hover-text">Multi-film documentary series examining grid modernization and showing how combustion engine workers can transition into renewable energy.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-current-revolution-series.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -529,7 +531,7 @@
                     <span class="tag-pill">Navajo Nation</span>
                     <h3 class="hover-heading">Current Revolution: Nation in Transition</h3>
                     <p class="hover-text">Documenting coal-to-renewable transition in the Navajo Nation, offering a human-centered roadmap for energy transitions globally.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-current-revolution-nation-in-transition.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -547,7 +549,7 @@
                     <span class="tag-pill">Rural Advocacy</span>
                     <h3 class="hover-heading">Renewable Energy Works for Rural America</h3>
                     <p class="hover-text">Social media video campaign produced for environmental non-profits to defend rural clean energy economic gains.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-renewable-energy-rural-america.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -565,7 +567,7 @@
                     <span class="tag-pill">Aviation Infrastructure</span>
                     <h3 class="hover-heading">Resilient on the Ground</h3>
                     <p class="hover-text">Documentary film created for a major US airport telling their sustainability success story and aligning a 10,000-employee workforce.</p>
-                    <a href="#" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
+                    <a href="project-resilient-on-the-ground.html" class="btn btn-sm btn-light case-study-btn">Explore Case Study &rarr;</a>
                   </div>
                 </div>
               </div>
@@ -589,8 +591,8 @@
           <div class="about-image-column">
             <div class="portrait-pattern-backdrop"></div>
             <div class="portrait-card-frame-gradient">
-              <img src="assets/logo icon.svg" alt="" class="portrait-logo-watermark" aria-hidden="true" />
-              <img src="assets/profile/roger-sorkin-high-res-profile.webp" alt="Roger Sorkin Strategic Communications Specialist" class="portrait-img" width="720" height="883" decoding="async" />
+              <img src="assets/logo icon.svg" alt="" class="portrait-logo-watermark" aria-hidden="true" width="300" height="300" loading="lazy" decoding="async" />
+              <img src="assets/profile/roger-sorkin-high-res-profile.webp" alt="Roger Sorkin Strategic Communications Specialist" class="portrait-img" width="720" height="883" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -641,8 +643,8 @@
             </div>
 
             <div class="about-action-row">
-              <a href="#contact" class="btn btn-dark">Schedule Strategy Call &rarr;</a>
-              <a href="#projects" class="btn btn-outline-dark">View Case Studies</a>
+              <a href="contact.html" class="btn btn-dark">Schedule Strategy Call &rarr;</a>
+              <a href="about.html" class="btn btn-outline-dark">Read Full Bio &amp; Story &rarr;</a>
             </div>
 
           </div>
@@ -811,8 +813,8 @@
       <button class="modal-close" id="reelClose" aria-label="Close showreel">&times;</button>
       <h3 style="font-size: 1.5rem; color: #fff; margin-bottom: 16px;">Roger Sorkin: Strategic Showreel</h3>
       <div class="video-reel-container">
-        <video controls autoplay class="reel-video" id="modalReelVideo">
-          <source src="assets/hero/RS-website-banner-4.mp4" type="video/mp4">
+        <video controls preload="none" class="reel-video" id="modalReelVideo">
+          <source data-src="assets/hero/RS-website-banner-4.mp4" type="video/mp4">
         </video>
       </div>
     </div>
@@ -848,10 +850,11 @@
           <h5 class="footer-col-title">Quick Links</h5>
           <ul class="footer-nav-list">
             <li><a href="https://www.amresproject.org/" target="_blank" rel="noopener">American Resilience Project</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <li><a href="https://www.linkedin.com/in/rogersorkin/" target="_blank" rel="noopener">LinkedIn</a></li>
           </ul>
         </div>
